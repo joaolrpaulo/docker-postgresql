@@ -1,0 +1,12 @@
+dbdata:
+  image: YOURUSERNAME/postgresql:9.6
+  volumes:
+    - /var/lib/postgresql
+  command: "true"
+
+db:
+  image: YOURUSERNAME/postgresql:9.6
+  volumes_from:
+    - dbdata
+  ports:
+    - "5432:5432"
